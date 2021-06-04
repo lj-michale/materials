@@ -107,7 +107,4 @@ object FunctionalProgrammingExample001 {
   lazy val aa = fun9()
   println(aa)
 
-
-
-
 }

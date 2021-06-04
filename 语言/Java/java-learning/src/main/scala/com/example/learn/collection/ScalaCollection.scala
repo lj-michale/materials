@@ -32,7 +32,6 @@ object ScalaCollection{
     println("reverse =>" + list.reverse)
     // 去重
     println("distinct =>" + list.distinct)
-
     // 集合映射
     println("map => " + list.map(x=>{x*2}))
     println("map => " + list.map(x=>x*2))
