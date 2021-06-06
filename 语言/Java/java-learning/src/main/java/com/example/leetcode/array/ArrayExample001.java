@@ -24,7 +24,7 @@ public class ArrayExample001 {
         // 对实例化数组进行扩容
         String [] array2 = {"hello","world",null,null,"Mufasa"};
         array2 = (String[])resizeArray(array2,10);
-        for(String str:array){
+        for(String str:array2){
             //hello、world、null、null、Mufasa、
             System.out.print(str+"、");
         }
