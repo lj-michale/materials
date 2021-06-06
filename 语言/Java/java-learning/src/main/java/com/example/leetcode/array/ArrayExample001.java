@@ -1,10 +1,13 @@
 package com.example.leetcode.array;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author lj.michale
  * @description
  * @date 2021-06-06
  */
+@Slf4j
 public class ArrayExample001 {
 
     public static void main(String[] args) {
@@ -21,6 +24,7 @@ public class ArrayExample001 {
             System.out.print(str+"、");
         }
 
+        log.info(">>>>>>>>>>>>>>>>>对实例化数组进行扩容\n");
         // 对实例化数组进行扩容
         String [] array2 = {"hello","world",null,null,"Mufasa"};
         array2 = (String[])resizeArray(array2,10);
