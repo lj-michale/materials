@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author lj.michale
+ *         也可以直接使用Java自带的类集框架中的ArrayList、Vector
+ *         Vector中方法使用sychronized修饰符，线程安全【与ArrayList的区别】
  * @description
  * @date 2021-06-06
  */
@@ -28,6 +30,10 @@ public class ArrayExample001 {
 
         log.info(">>>>>>>>>>>>>>>>>数组删除与增添，本质上是创建新的数值并且copy数值【需要私有反射实例化新数组，这里需要进一步优化】\n");
         array = drop(array,3);
+        arrayPrint(array);
+
+        log.info(">>>>>>>>>>>>>>>>>数组添加元素，本质也是创建新数组长度+1拷贝，index后移、赋值\n");
+        array = add(array,3,"添加字符串");
         arrayPrint(array);
 
     }
@@ -66,7 +72,7 @@ public class ArrayExample001 {
         if(index < 0 || index > size) {
             throw new RuntimeException("删除索引范围有误");
         }else {
-            //获取对象类别
+            // 获取对象类别
             Class elementType = oldArray.getClass().getComponentType();
             Object newArray = java.lang.reflect.Array.newInstance(elementType,size-1);
             String[] newStringArray = (String[])newArray;
@@ -77,6 +83,38 @@ public class ArrayExample001 {
                     counter++;
                 }else {
                     continue;
+                }
+            }
+            return newStringArray;
+        }
+    }
+
+    /**
+     * @descr 增加指定位置上的元素
+     * @date 2021/6/6 16:21
+     * @param oldArray
+     * @param index
+     * @param str
+     */
+    public static String[] add(Object[] oldArray ,int index, String str) {
+        int size = java.lang.reflect.Array.getLength(oldArray);
+        if(index < 0 || index > size) {
+            throw new RuntimeException("添加索引范围有误");
+        }else {
+            //获取对象类别
+            Class elementType = oldArray.getClass().getComponentType();
+            Object newArray = java.lang.reflect.Array.newInstance(elementType,size+1);
+            String[] newStringArray = (String[])newArray;
+            int counter = 0;
+            for(int i = 0; i < oldArray.length; i++) {
+                if(i!=index) {
+                    newStringArray[counter] = (String) oldArray[i];
+                    counter++;
+                } else {
+                    newStringArray[counter] = (String) oldArray[i];
+                    counter++;
+                    newStringArray[counter] = str;
+                    counter++;
                 }
             }
             return newStringArray;
