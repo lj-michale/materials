@@ -14,7 +14,6 @@ public class Graph2<T>{
     private LinkedList<LinkedList<T>> graph =new LinkedList<LinkedList<T>>();
     private LinkedList<T> midLinkedList;
 
-    // set，get，getAll方法
     public void add(LinkedList<T> midLinkedList){
         this.graph.add(midLinkedList);
     }
@@ -26,7 +25,7 @@ public class Graph2<T>{
     public void getAll(){
         for(LinkedList<T> temp:this.graph){
             for(T temp1:temp){
-                System.out.print(temp1+",");
+                System.out.print(temp1 + ",");
             }
             System.out.println();
         }

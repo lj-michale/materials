@@ -49,9 +49,9 @@ public class Graph1 {
     }
 
     public void getAll(){
-        for(Vector<Integer> temp:graph){
-            for(Integer temp1:temp){
-                System.out.print(temp1+",");
+        for(Vector<Integer> temp:graph) {
+            for(Integer temp1:temp) {
+                System.out.print(temp1 + ",");
             }
             System.out.println("");
         }
