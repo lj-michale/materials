@@ -71,17 +71,17 @@ public class ArrayExample001 {
         int size = java.lang.reflect.Array.getLength(oldArray);
         if(index < 0 || index > size) {
             throw new RuntimeException("删除索引范围有误");
-        }else {
+        } else {
             // 获取对象类别
             Class elementType = oldArray.getClass().getComponentType();
             Object newArray = java.lang.reflect.Array.newInstance(elementType,size-1);
             String[] newStringArray = (String[])newArray;
             int counter = 0;
             for(int i = 0; i < oldArray.length; i++) {
-                if(i != index){
+                if(i != index) {
                     newStringArray[counter] = (String) oldArray[i];
                     counter++;
-                }else {
+                } else {
                     continue;
                 }
             }
@@ -100,7 +100,7 @@ public class ArrayExample001 {
         int size = java.lang.reflect.Array.getLength(oldArray);
         if(index < 0 || index > size) {
             throw new RuntimeException("添加索引范围有误");
-        }else {
+        } else {
             //获取对象类别
             Class elementType = oldArray.getClass().getComponentType();
             Object newArray = java.lang.reflect.Array.newInstance(elementType,size+1);
@@ -127,7 +127,7 @@ public class ArrayExample001 {
      * @param array
      */
     public static void arrayPrint(String[] array) {
-        for(String str : array){
+        for(String str : array) {
             System.out.print(str + "、");
         }
     }
