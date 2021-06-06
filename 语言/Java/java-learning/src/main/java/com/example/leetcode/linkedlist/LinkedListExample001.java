@@ -17,7 +17,7 @@ public class LinkedListExample001{
         boolean flag = true;
 
         for(String str:array) {
-            if(flag) {
+            if (flag) {
                 rootNode = new Node(str);
                 indexNode = rootNode;
                 flag = false;
@@ -31,11 +31,13 @@ public class LinkedListExample001{
         indexNode = rootNode;
         System.out.println(rootNode.getSize());
 
-        while(true){
+        while(true) {
             System.out.println(indexNode.getStr());
+
             if(indexNode.hasNext() == false) {
                 break;
             }
+
             indexNode = indexNode.getNextNode();
         }
     }
