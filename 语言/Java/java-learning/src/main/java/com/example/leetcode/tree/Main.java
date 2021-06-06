@@ -14,10 +14,10 @@ public class Main {
     }
 
     private static void orderInsert(int size, int order) {
+
         long startTime = System.currentTimeMillis();
 
-        for (int j = 0; j < 10; j++)
-        {
+        for (int j = 0; j < 10; j++) {
             BplusTree<Long, Long> tree = new BplusTree<Long, Long>(1024);
             for (long i = 0; i < size; i++)
             {
@@ -31,11 +31,13 @@ public class Main {
     }
 
     private static void randomInsert(int size, int order) {
+
         long totalTime = 0;
         Random random = new Random(2333);
 
         for (int j = 0; j < 10; j++) {
             Long[] dataList = new Long[size];
+
             for (int i = 0; i < size; i++) {
                 dataList[i] = Long.valueOf(i);
                 if (i > 0) {
@@ -48,9 +50,11 @@ public class Main {
 
             long startTime = System.currentTimeMillis();
             BplusTree<Long, Long> tree = new BplusTree<Long, Long>(order);
+
             for (int i = 0; i < size; i++) {
                 tree.insertOrUpdate(dataList[i], dataList[i]);
             }
+
             long endTime = System.currentTimeMillis();
             totalTime += endTime - startTime;
         }
