@@ -10,7 +10,6 @@ object PatternMatchingExample001 {
    * 如果所有case都不匹配，那么会执行case_分支，类似于Java中default语句。
    * 如果不存在case _分支，那么会发生错误。
    */
-
   // 匹配常量
   def describe(x: Any) = x match {
     case 5 => "Int five"

@@ -1,0 +1,31 @@
+syntax="proto3";
+
+package cc.protobuf;
+
+option java_package = "cc.protobuf.model";
+option java_multiple_files=true;
+option java_outer_classname="AddressBookProtos";
+
+message Person
+{
+	string name = 1;
+	int32 id = 2;
+	string emial = 3;
+	enum PhoneType {
+	 MOBILE=0;
+	 HOME=1;
+	 WORK=3;
+	}
+	
+	message PhoneNumber
+	{
+		string number = 1;
+		PhoneType rtpe = 2;
+	}
+	repeated PhoneNumber phone = 4;
+	
+	message AddressBook
+	{
+		repeated Person people = 4;
+	}
+}

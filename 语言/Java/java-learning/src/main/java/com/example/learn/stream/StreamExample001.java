@@ -1,4 +1,4 @@
-package com.example.stream;
+package com.example.learn.stream;
 
 import java.util.Arrays;
 
